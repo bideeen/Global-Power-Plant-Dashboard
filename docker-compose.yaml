@@ -16,7 +16,7 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - "8080:80"
-  mage
+  # mage
   dbt-bq-dtc:
     build:
       context: .
