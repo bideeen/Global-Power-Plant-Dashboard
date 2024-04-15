@@ -7,8 +7,8 @@ variable "credentials" {
 
 
 variable "project" {
-  description = "composed"
-  default     = "composed-hangar-236017"
+  description = "Zoomcamp-DE"
+  default     = "zoomcamp-de-411621"
 }
 
 variable "region" {
