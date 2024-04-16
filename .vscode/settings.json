@@ -1,3 +1,6 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "quarto.path": "C:\\Program Files\\Quarto\\bin\\Quarto.exe",
+    "quarto.usePipQuarto": true,
+    "quarto.render.renderOnSave": true
 }
