@@ -1,8 +1,9 @@
 # Global-Power-Plant-Dashboard
 
+![GLOBAL ENERGY PLANTS ANALYSIS](image-1.png)
 
 ## Content
- - Introduction
+ - [Introduction] (## Introduction) 
  - Problem Statement
  - Cloud(IaC)
  - Data Ingestion(Batch)
