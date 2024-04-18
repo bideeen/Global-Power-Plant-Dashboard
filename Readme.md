@@ -13,9 +13,12 @@
   - [Data Ingestion(Batch)](#data-ingestionbatch)
   - [Data Warehousing](#data-warehousing)
   - [Transformation](#transformation)
+    - [Transformation Process Overview](#transformation-process-overview)
   - [The Dashboard](#the-dashboard)
   - [Summary](#summary)
-  - [Reference](#reference)
+    - [Project Overview](#project-overview)
+    - [Key Components](#key-components)
+    - [Focus Areas](#focus-areas)
 
 ## Introduction
 This project seeks to leverage the Global Power Plant Database to provide actionable insights into the global energy landscape. It is being undertaken as the final project for my participation in the Data Engineering Zoomcamp course. Power generation is a critical component of modern society, and understanding its evolution, efficiency, and environmental impact is essential for informed decision-making.
@@ -77,8 +80,17 @@ The data ingestion process follows these steps:
  - **Exporting to Google Cloud Storage (GCS):** Finally, the data is exported from PostgreSQL and stored in a Google Cloud Storage (GCS) bucket. GCS provides a cost-effective and highly available object storage solution for archiving and future access to the processed dataset.
   
 ## Data Warehousing
-
+This project utilizes BigQuery, a serverless, scalable data warehouse service offered by Google Cloud Platform (GCP), to store and manage the processed data for efficient analysis. The processed data, extracted from the PostgreSQL database during the ingestion phase, is transformed and loaded into BigQuery tables specifically designed for efficient querying and analysis. This data warehouse serves as the central repository for all the project's data, readily accessible for further exploration and insights generation.
 ## Transformation
+This project leverages a combination of tools to clean, transform, and prepare the raw data for efficient loading into the data warehouse
+ 
+ - dbt
+ - Mage.ai
+
+### Transformation Process Overview
+ - **Data Extraction:** Mage.ai tasks can be configured to acquire the raw data from its source (potentially using the code snippet you provided earlier).
+ - **dbt Model Execution:** Mage.ai orchestrates the execution of dbt models. These models contain SQL code that performs various data cleaning and transformation steps like handling missing values, formatting data types, deriving new calculated fields, and ensuring data quality.
+ - **Loading to BigQuery:** The transformed data is then loaded into BigQuery tables designed for efficient storage and querying.
 
 ## The Dashboard
 Click here to access the dashboard :- [GLOBAL ENERGY PLANTS ANALYSIS](https://lookerstudio.google.com/reporting/62b8a7f0-8773-43cb-9b59-9bb8433e34f7)
@@ -86,34 +98,28 @@ Click here to access the dashboard :- [GLOBAL ENERGY PLANTS ANALYSIS](https://lo
 ![GLOBAL ENERGY PLANTS ANALYSIS](image-1.png)
 
 ## Summary
+### Project Overview
+This data engineering project aims to analyze the Global Power Plant Database to uncover insights into global energy trends, power plant efficiency, grid vulnerabilities, and environmental impacts.
 
-## Reference
+### Key Components
 
+ - **Data Source:** Global Power Plant Database (https://datasets.wri.org/dataset/globalpowerplantdatabase)
 
+**Cloud Infrastructure (IaC):** Google Cloud Platform (GCP) with Terraform for infrastructure provisioning and automation.
 
-<!-- Terraform -->
+ - **Data Ingestion (Batch):** Mage.ai is used to orchestrate the ingestion process, which includes downloading the data, loading it into a PostgreSQL database for initial processing, and ultimately exporting it to Google Cloud Storage (GCS).
 
-wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+- **Data Transformation:**  dbt (Data Build Tool) is used to perform SQL-based data transformations within the data warehouse, ensuring data cleanliness, consistency, and readiness for analysis. Mage.ai orchestrates this transformation process.
 
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+ - **Data Warehousing:** BigQuery (Google's serverless data warehouse) is used for scalable storage and high-performance querying of the processed power plant data.
 
-sudo apt update && sudo apt install terraform
+ - **Visualization and Insights:** Looker Studio (formerly Google Data Studio) will create the dashboard, using filters for country and fuel type. Charts will include maps, pie charts, line charts, tables, and scorecards to provide insights into capacity distribution, fuel type breakdowns, generation trends, and comparisons between estimated and actual generation.
+ 
+### Focus Areas
+The project will explore:
+ - [x] Global power plant capacity and generation trends
+ - [x] Regional disparities in energy transitions
+ - [x] Efficiency analysis based on power plant age and fuel type
+ - [x] Grid vulnerabilities and potential for improved resiliency
+ - [x] Environmental impact assessments
 
-<!-- jupyter -->
-pip install jupyter
-
-<!-- create docker network -->
-docker network create pg-network
-<!-- create docker volume -->
-docker volume create --name dtc_pg_volume_local -d local 
-
-commissioning_year                               
-year_of_capacity_data
-
-'generation_gwh_2013' 'generation_gwh_2014', 'generation_gwh_2015', 'generation_gwh_2016', 'generation_gwh_2017', 'generation_gwh_2018', 'generation_gwh_2019',          
-generation_data_source       
-estimated_generation_gwh_2013
-estimated_generation_gwh_2014
-estimated_generation_gwh_2015
-estimated_generation_gwh_2016
-estimated_generation_gwh_2017 
