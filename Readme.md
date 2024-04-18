@@ -76,8 +76,10 @@ The data ingestion process follows these steps:
 
 ## Transformation
 
-## Dashboard
-[GLOBAL ENERGY PLANTS ANALYSIS](https://lookerstudio.google.com/reporting/62b8a7f0-8773-43cb-9b59-9bb8433e34f7)
+## The Dashboard
+Click here to access the dashboard :- [GLOBAL ENERGY PLANTS ANALYSIS](https://lookerstudio.google.com/reporting/62b8a7f0-8773-43cb-9b59-9bb8433e34f7)
+
+![GLOBAL ENERGY PLANTS ANALYSIS](image-1.png)
 
 ## Summary
 
