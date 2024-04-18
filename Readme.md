@@ -3,16 +3,14 @@
 ![GLOBAL ENERGY PLANTS ANALYSIS](image-1.png)
 
 ## Content
- - [Introduction] (## Introduction) 
- - Problem Statement
- - Cloud(IaC)
- - Data Ingestion(Batch)
- - Data Warehousing
- - Transformation
- - Dashboard
- - How to Use
- - Summary
- - Reference
+ - [Introduction] (#Introduction) 
+ - [Problem Statement](#ProblemStatement)
+ - [Cloud(IaC)](#Cloud(IaC))
+ - [Data Ingestion(Batch)](#DataIngestion(Batch))
+ - [Data Warehousing](#DataWarehousing)
+ - [Transformation](#Transformation)
+ - [Dashboard](#Dashboard)
+ - [Summary](#Summary)
 
 ## Introduction
 This project seeks to leverage the Global Power Plant Database to provide actionable insights into the global energy landscape. It is being undertaken as the final project for my participation in the Data Engineering Zoomcamp course. Power generation is a critical component of modern society, and understanding its evolution, efficiency, and environmental impact is essential for informed decision-making.
