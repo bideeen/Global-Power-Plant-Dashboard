@@ -18,9 +18,6 @@ This project seeks to leverage the Global Power Plant Database to provide action
 
 The Global Power Plant Database offers unprecedented access to detailed information on power plants worldwide, including their location, capacity, fuel type, and generation. However, unlocking the full potential of this data requires careful data engineering, analysis, and visualization.
 
-- [x] Task 1
-- [ ] Task 2
-
 ### Goals
 This project aims to:
 
@@ -38,18 +35,49 @@ The insights derived from this project can inform stakeholders across the energy
  - **Researchers:** Access a cleaned and organized dataset for further research into energy systems, sustainability, and climate change mitigation.
 
 ## Problem Statement
+The Global Power Plant Database offers a wealth of information on power generation facilities worldwide. However, to unlock the full potential of this data, several key challenges and questions need to be addressed:
+
+ - **Data Cleaning and Quality:** With datasets of this size, inconsistencies, missing values, and data quality issues are a common challenge. How can we effectively preprocess and clean the data to ensure its integrity for analysis?
+
+ - **Understanding Global Energy Trends:** Can the dataset reveal patterns in the adoption of different fuel types (fossil fuels vs. renewables) over time? Are there regional disparities in transitioning to cleaner energy sources?
+
+ - **Assessing Power Plant Efficiency:**  Is it possible to analyze the relationship between a power plant's age, fuel type, capacity, and its overall efficiency? Identifying patterns here can guide efforts in optimizing existing infrastructure.
+
+ - **Power Grid Interdependencies:** Analyzing power plant locations and capacities can shed light on regional grid vulnerabilities and resilience. Where are single points of failure in the power grid, and how can these be mitigated?
+
+ - **Environmental Impact Quantification:**  The dataset can be used to correlate power plants with data on emissions, regional air quality, and water usage. This can help quantify the environmental footprint of different regions and power generation technologies.
+
+This data engineering project aims to tackle these questions through:
+
+  - [ ] Rigorous data cleansing and validation techniques.
+  - [ ] Creating visualizations and statistical analyses to uncover trends in power generation.
+  - [ ] Building models to explore power plant efficiency and grid reliability factors.
 
 ## Cloud(IaC)
+This project leverages Infrastructure as Code (IaC) principles to manage and deploy the infrastructure required for data processing and analysis. Specifically, this project utilizes HashiCorp Terraform alongside Google Cloud Platform (GCP).
+
+ - **Terraform:** Terraform is an open-source tool that allows you to define infrastructure resources (like compute instances, storage buckets, and databases) in human-readable configuration files. This enables a declarative approach to infrastructure management, promoting consistency, repeatability, and version control.
+
+  - **Google Cloud Platform (GCP):** GCP serves as the cloud provider for this project, offering a suite of scalable and reliable services for data storage, processing, and analysis. Terraform configurations are used to provision and manage these GCP resources required for the project's workflow.
 
 ## Data Ingestion(Batch)
+This project implements a batch data ingestion pipeline to acquire, process, and store the Global Power Plant Database.
 
+ - **Mage.ai:** This project utilizes Mage.ai, an open-source platform designed for building and managing data pipelines. Mage.ai provides a user-friendly interface for defining data processing tasks and orchestrating their execution in a reliable and scalable manner.
+
+The data ingestion process follows these steps:
+
+ - **Acquiring Raw Data:** Mage.ai tasks are configured to download the latest version of the Global Power Plant Database from the source website.
+ - **Data Transformation:** Downloaded data might require cleaning, transformation, and validation before loading into the target database. Mage.ai pipelines can be designed to handle these tasks efficiently.
+- **Loading to PostgreSQL:** The cleaned and transformed data is then loaded into a PostgreSQL database instance hosted on GCP. PostgreSQL offers a robust and scalable relational database management system for structured data storage.
+ - **Exporting to Google Cloud Storage (GCS):** Finally, the data is exported from PostgreSQL and stored in a Google Cloud Storage (GCS) bucket. GCS provides a cost-effective and highly available object storage solution for archiving and future access to the processed dataset.
+  
 ## Data Warehousing
 
 ## Transformation
 
 ## Dashboard
-
-## How to Use
+[GLOBAL ENERGY PLANTS ANALYSIS](https://lookerstudio.google.com/reporting/62b8a7f0-8773-43cb-9b59-9bb8433e34f7)
 
 ## Summary
 
@@ -73,3 +101,13 @@ docker network create pg-network
 <!-- create docker volume -->
 docker volume create --name dtc_pg_volume_local -d local 
 
+commissioning_year                               
+year_of_capacity_data
+
+'generation_gwh_2013' 'generation_gwh_2014', 'generation_gwh_2015', 'generation_gwh_2016', 'generation_gwh_2017', 'generation_gwh_2018', 'generation_gwh_2019',          
+generation_data_source       
+estimated_generation_gwh_2013
+estimated_generation_gwh_2014
+estimated_generation_gwh_2015
+estimated_generation_gwh_2016
+estimated_generation_gwh_2017 

@@ -67,10 +67,6 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This project seeks to leverage the Global Power Plant Database to provide actionable insights into the global energy landscape. It is being undertaken as the final project for my participation in the Data Engineering Zoomcamp course. Power generation is a critical component of modern society, and understanding its evolution, efficiency, and environmental impact is essential for informed decision-making.</p>
 <p>The Global Power Plant Database offers unprecedented access to detailed information on power plants worldwide, including their location, capacity, fuel type, and generation. However, unlocking the full potential of this data requires careful data engineering, analysis, and visualization.</p>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Task 1</label></li>
-<li><label><input type="checkbox">Task 2</label></li>
-</ul>
 <section id="goals" class="level3">
 <h3 class="anchored" data-anchor-id="goals">Goals</h3>
 <p>This project aims to:</p>
@@ -94,12 +90,42 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="problem-statement" class="level2">
 <h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<p>The Global Power Plant Database offers a wealth of information on power generation facilities worldwide. However, to unlock the full potential of this data, several key challenges and questions need to be addressed:</p>
+<ul>
+<li><p><strong>Data Cleaning and Quality:</strong> With datasets of this size, inconsistencies, missing values, and data quality issues are a common challenge. How can we effectively preprocess and clean the data to ensure its integrity for analysis?</p></li>
+<li><p><strong>Understanding Global Energy Trends:</strong> Can the dataset reveal patterns in the adoption of different fuel types (fossil fuels vs.&nbsp;renewables) over time? Are there regional disparities in transitioning to cleaner energy sources?</p></li>
+<li><p><strong>Assessing Power Plant Efficiency:</strong> Is it possible to analyze the relationship between a power plant’s age, fuel type, capacity, and its overall efficiency? Identifying patterns here can guide efforts in optimizing existing infrastructure.</p></li>
+<li><p><strong>Power Grid Interdependencies:</strong> Analyzing power plant locations and capacities can shed light on regional grid vulnerabilities and resilience. Where are single points of failure in the power grid, and how can these be mitigated?</p></li>
+<li><p><strong>Environmental Impact Quantification:</strong> The dataset can be used to correlate power plants with data on emissions, regional air quality, and water usage. This can help quantify the environmental footprint of different regions and power generation technologies.</p></li>
+</ul>
+<p>This data engineering project aims to tackle these questions through:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Rigorous data cleansing and validation techniques.</label></li>
+<li><label><input type="checkbox">Creating visualizations and statistical analyses to uncover trends in power generation.</label></li>
+<li><label><input type="checkbox">Building models to explore power plant efficiency and grid reliability factors.</label></li>
+</ul>
 </section>
 <section id="cloudiac" class="level2">
 <h2 class="anchored" data-anchor-id="cloudiac">Cloud(IaC)</h2>
+<p>This project leverages Infrastructure as Code (IaC) principles to manage and deploy the infrastructure required for data processing and analysis. Specifically, this project utilizes HashiCorp Terraform alongside Google Cloud Platform (GCP).</p>
+<ul>
+<li><p><strong>Terraform:</strong> Terraform is an open-source tool that allows you to define infrastructure resources (like compute instances, storage buckets, and databases) in human-readable configuration files. This enables a declarative approach to infrastructure management, promoting consistency, repeatability, and version control.</p></li>
+<li><p><strong>Google Cloud Platform (GCP):</strong> GCP serves as the cloud provider for this project, offering a suite of scalable and reliable services for data storage, processing, and analysis. Terraform configurations are used to provision and manage these GCP resources required for the project’s workflow.</p></li>
+</ul>
 </section>
 <section id="data-ingestionbatch" class="level2">
 <h2 class="anchored" data-anchor-id="data-ingestionbatch">Data Ingestion(Batch)</h2>
+<p>This project implements a batch data ingestion pipeline to acquire, process, and store the Global Power Plant Database.</p>
+<ul>
+<li><strong>Mage.ai:</strong> This project utilizes Mage.ai, an open-source platform designed for building and managing data pipelines. Mage.ai provides a user-friendly interface for defining data processing tasks and orchestrating their execution in a reliable and scalable manner.</li>
+</ul>
+<p>The data ingestion process follows these steps:</p>
+<ul>
+<li><strong>Acquiring Raw Data:</strong> Mage.ai tasks are configured to download the latest version of the Global Power Plant Database from the source website.</li>
+<li><strong>Data Transformation:</strong> Downloaded data might require cleaning, transformation, and validation before loading into the target database. Mage.ai pipelines can be designed to handle these tasks efficiently.</li>
+<li><strong>Loading to PostgreSQL:</strong> The cleaned and transformed data is then loaded into a PostgreSQL database instance hosted on GCP. PostgreSQL offers a robust and scalable relational database management system for structured data storage.</li>
+<li><strong>Exporting to Google Cloud Storage (GCS):</strong> Finally, the data is exported from PostgreSQL and stored in a Google Cloud Storage (GCS) bucket. GCS provides a cost-effective and highly available object storage solution for archiving and future access to the processed dataset.</li>
+</ul>
 </section>
 <section id="data-warehousing" class="level2">
 <h2 class="anchored" data-anchor-id="data-warehousing">Data Warehousing</h2>

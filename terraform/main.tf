@@ -42,43 +42,43 @@ resource "google_bigquery_dataset" "demo_dataset" {
 # Enable IAM API
 resource "google_project_service" "iam" {
   service            = "iam.googleapis.com"
-  disable_on_destroy = false
+  disable_on_destroy = true
 }
 
 # Enable Artifact Registry API
 resource "google_project_service" "artifactregistry" {
   service            = "artifactregistry.googleapis.com"
-  disable_on_destroy = false
+  disable_on_destroy = true
 }
 
 # Enable Cloud Run API
 resource "google_project_service" "cloudrun" {
   service            = "run.googleapis.com"
-  disable_on_destroy = false
+  disable_on_destroy = true
 }
 
 # Enable Cloud Resource Manager API
 resource "google_project_service" "resourcemanager" {
   service            = "cloudresourcemanager.googleapis.com"
-  disable_on_destroy = false
+  disable_on_destroy = true
 }
 
 # Enable VCP Access API
 resource "google_project_service" "vpcaccess" {
   service            = "vpcaccess.googleapis.com"
-  disable_on_destroy = false
+  disable_on_destroy = true
 }
 
 # Enable Secret Manager API
 resource "google_project_service" "secretmanager" {
   service            = "secretmanager.googleapis.com"
-  disable_on_destroy = false
+  disable_on_destroy = true
 }
 
 # Enable Cloud SQL Admin API
 resource "google_project_service" "sqladmin" {
   service            = "sqladmin.googleapis.com"
-  disable_on_destroy = false
+  disable_on_destroy = true
 }
 
 # Create the Cloud Run service
